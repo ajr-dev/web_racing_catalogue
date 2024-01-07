@@ -18,7 +18,7 @@
 		height="172"
 		viewBox="0 0 1779 172"
 		fill="rgb(34, 34, 34)"
-		class="text-neutral-800 font-bold inline w-full h-auto bg-gray-200 mt-14"
+		class="text-neutral-800 font-bold inline w-full h-auto bg-gray-200 mt-4 lg:mt-14"
 	>
 		<text
 			x="50%"
@@ -54,13 +54,13 @@
 		</div>
 	</div> -->
 
-	<p class="flex w-full justify-center items-center text-2xl">
+	<p class="flex w-full justify-center items-center text-lg lg:text-2xl">
 		Cataloging all pigeons in Tulbagh, since 2024.
 	</p>
 
 	<!-- maybe an image here of the player search records -->
-	<div class="mt-40 relative group">
-		<img class="object-cover rounded-lg" alt="pigeons" src="test.png" />
+	<div class="mt-6 lg:mt-40 relative group">
+		<img class="object-cover rounded-lg w-full h-64 lg:h-auto" alt="pigeons" src="test.png" />
 		<div
 			class="absolute inset-0 bg-black opacity-0 group-hover:opacity-20 duration-300 ease-in-out transition-opacity rounded-lg"
 		></div>
