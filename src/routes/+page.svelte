@@ -54,7 +54,7 @@
 		</div>
 	</div> -->
 
-	<p class="flex w-full justify-center items-center text-lg lg:text-2xl">
+	<p class="flex w-full justify-center items-center text-lg lg:text-2xl content-center text-center">
 		Cataloging all pigeons in Tulbagh, since 2024.
 	</p>
 
