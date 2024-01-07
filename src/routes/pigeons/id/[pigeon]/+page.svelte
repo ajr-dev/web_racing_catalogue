@@ -1,0 +1,226 @@
+<script lang="ts">
+	import type { PageData } from './$types';
+	import { page } from '$app/stores';
+
+	export let data: PageData;
+
+	const formatDate = (timestamp) => {
+		if (timestamp) {
+			const date = new Date(parseInt(timestamp) * 1000);
+			const year = date.getFullYear();
+			const month = String(date.getMonth() + 1).padStart(2, '0');
+			const day = String(date.getDate()).padStart(2, '0');
+			return `${year}/${month}/${day}`;
+		} else {
+			return '';
+		}
+	};
+</script>
+
+<div class="mt-4 lg:mt-14 flex flex-col lg:flex-row">
+	<div class="mt-7 gap-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+		<svg
+			xmlns="http://www.w3.org/2000/svg"
+			width="120"
+			height="120"
+			viewBox="0 0 48 48"
+			{...$$props}
+			><g fill="none"
+				><path
+					stroke="#808080"
+					stroke-linecap="round"
+					stroke-linejoin="round"
+					stroke-width="4"
+					d="M14 26c-1.04-1.793-2.15-5.551 2.008-10.244c1.213-1.141 2.806-2.64 5.716-3.423C24.842 10.867 26.401 8.52 24.323 5C25.882 5.978 29 9.693 29 16.733"
+				/><path
+					stroke="#808080"
+					stroke-linecap="round"
+					stroke-linejoin="round"
+					stroke-width="4"
+					d="M16.253 27.93C8 23.57 4.51 30.195 4 33.755c4 0 8.679 2.911 10.721 5.823c3.676 4.66 9.36 3.56 11.742 2.427c7.352-3.883 9.87-3.56 10.21-2.912c.41 3.106 1.532 3.883 2.043 3.883c3.676.388 4.935-4.045 5.105-6.31c.817-9.319-1.361-9.707-2.552-8.736c-4.902 5.824-7.829 6.957-8.68 6.795c-3.675-.777-3.233-2.265-2.552-2.913C36.572 26.377 36.504 14.34 35.653 9c-2.45 5.825-6.467 8.251-8.169 8.737c-10.21 2.718-11.742 7.928-11.231 10.193Z"
+				/><circle cx="12" cy="31.412" r="2" fill="#808080" /></g
+			>
+		</svg>
+
+		<div class="flex flex-col mt-5 gap-3 text-gray-500 text-xl leading-5 font-semibold">
+			<p>
+				Pigeon Ring: <span class="py-[2px] px-2 bg-black rounded-lg text text-neutral-100"
+					>{data.pigeon[0]['ring']}</span
+				>
+			</p>
+			<p>Strain: {data.pigeon[0]['strain']}</p>
+			<p>Colour: {data.pigeon[0]['color']}</p>
+		</div>
+
+		<div class="flex flex-col mt-5 gap-3 text-gray-500 text-xl leading-5 font-semibold">
+			<p>Alias: {data.pigeon[0]['alias']}</p>
+			<p>
+				Sex: {data.pigeon[0]['sex'] == 0 ? 'Hen' : 'Cock'}
+			</p>
+			<p>
+				Date of Birth: {formatDate(data.pigeon[0]['dob'])}
+			</p>
+		</div>
+
+		<div class="flex flex-col mt-5 gap-3 text-gray-500 text-xl leading-5 font-semibold">
+			<p>Sire: {data.pigeon[0]['sire']}</p>
+			<p>Dam: {data.pigeon[0]['dam']}</p>
+			<p>
+				Offspring: {data.pigeon[0]['offspring']}
+			</p>
+		</div>
+	</div>
+</div>
+
+<div class="flex flex-col mt-12 gap-3 text-gray-500 text-xl leading-5 font-semibold max-w-[800px]">
+	<p>Comment: {data.pigeon[0]['comment']}</p>
+</div>
+
+<div class="grid grid-cols-1 md:grid-cols-2">
+	{#if data.sire[0]}
+		<div>
+			<div
+				class="flex flex-col mt-28 gap-3 text-neutral-800 text-4xl leading-5 font-semibold max-w-[800px]"
+			>
+				<p>Sire</p>
+			</div>
+
+			<div
+				class="mt-7 gap-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-1 xl:grid-cols-2 3xl:grid-cols-3"
+			>
+				<div class="flex flex-col mt-5 gap-3 text-gray-500 text-xl leading-5 font-semibold">
+					<p>
+						Pigeon Ring: <span class="py-[2px] px-2 bg-black rounded-lg text text-neutral-100"
+							><a href="/pigeons/id/{data.sire[0]['ring'].replaceAll(' ', '_')}"
+								>{data.sire[0]['ring']}</a
+							></span
+						>
+					</p>
+					<p>Strain: {data.sire[0]['strain']}</p>
+					<p>Colour: {data.sire[0]['color']}</p>
+				</div>
+
+				<div class="flex flex-col mt-5 gap-3 text-gray-500 text-xl leading-5 font-semibold">
+					<p>Alias: {data.sire[0]['alias']}</p>
+					<p>
+						Sex: {data.sire[0]['sex'] == 0 ? 'Hen' : 'Cock'}
+					</p>
+					<p>
+						Date of Birth: {formatDate(data.sire[0]['dob'])}
+					</p>
+				</div>
+
+				<div class="flex flex-col mt-5 gap-3 text-gray-500 text-xl leading-5 font-semibold">
+					<p>Sire: {data.sire[0]['sire']}</p>
+					<p>Dam: {data.sire[0]['dam']}</p>
+					<p>
+						Offspring: {data.sire[0]['offspring']}
+					</p>
+				</div>
+			</div>
+			<div
+				class="flex flex-col mt-12 gap-3 text-gray-500 text-xl leading-5 font-semibold max-w-72 lg:max-w-96"
+			>
+				<p>Comment: {data.sire[0]['comment']}</p>
+			</div>
+		</div>
+	{/if}
+
+	{#if data.dam[0]}
+		<div>
+			<div
+				class="flex flex-col mt-28 gap-3 text-neutral-800 text-4xl leading-5 font-semibold max-w-[800px]"
+			>
+				<p>Dam</p>
+			</div>
+
+			<div
+				class="mt-7 gap-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-1 xl:grid-cols-2 3xl:grid-cols-3"
+			>
+				<div class="flex flex-col mt-5 gap-3 text-gray-500 text-xl leading-5 font-semibold">
+					<p>
+						Pigeon Ring: <span class="py-[2px] px-2 bg-black rounded-lg text text-neutral-100"
+							><a href="/pigeons/id/{data.sire[0]['ring'].replaceAll(' ', '_')}"
+								>{data.dam[0]['ring']}</a
+							></span
+						>
+					</p>
+					<p>Strain: {data.dam[0]['strain']}</p>
+					<p>Colour: {data.dam[0]['color']}</p>
+				</div>
+
+				<div class="flex flex-col mt-5 gap-3 text-gray-500 text-xl leading-5 font-semibold">
+					<p>Alias: {data.dam[0]['alias']}</p>
+					<p>
+						Sex: {data.dam[0]['sex'] == 0 ? 'Hen' : 'Cock'}
+					</p>
+					<p>
+						Date of Birth: {formatDate(data.dam[0]['dob'])}
+					</p>
+				</div>
+
+				<div class="flex flex-col mt-5 gap-3 text-gray-500 text-xl leading-5 font-semibold">
+					<p>Sire: {data.dam[0]['sire']}</p>
+					<p>Dam: {data.dam[0]['dam']}</p>
+					<p>
+						Offspring: {data.dam[0]['offspring']}
+					</p>
+				</div>
+			</div>
+			<div
+				class="flex flex-col mt-12 gap-3 text-gray-500 text-xl leading-5 font-semibold max-w-72 lg:max-w-96"
+			>
+				<p>Comment: {data.dam[0]['comment']}</p>
+			</div>
+		</div>
+	{/if}
+
+	{#if data.offspring[0]}
+		<div>
+			<div
+				class="flex flex-col mt-20 gap-3 text-neutral-800 text-4xl leading-5 font-semibold max-w-[800px]"
+			>
+				<p>Offspring</p>
+			</div>
+
+			<div
+				class="mt-7 gap-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-1 xl:grid-cols-2 3xl:grid-cols-3"
+			>
+				<div class="flex flex-col mt-5 gap-3 text-gray-500 text-xl leading-5 font-semibold">
+					<p>
+						Pigeon Ring: <span class="py-[2px] px-2 bg-black rounded-lg text text-neutral-100"
+							><a href="/pigeons/id/{data.sire[0]['ring'].replaceAll(' ', '_')}"
+								>{data.offspring[0]['ring']}</a
+							></span
+						>
+					</p>
+					<p>Strain: {data.offspring[0]['strain']}</p>
+					<p>Colour: {data.offspring[0]['color']}</p>
+				</div>
+
+				<div class="flex flex-col mt-5 gap-3 text-gray-500 text-xl leading-5 font-semibold">
+					<p>Alias: {data.offspring[0]['alias']}</p>
+					<p>
+						Sex: {data.offspring[0]['sex'] == 0 ? 'Hen' : 'Cock'}
+					</p>
+					<p>
+						Date of Birth: {formatDate(data.offspring[0]['dob'])}
+					</p>
+				</div>
+
+				<div class="flex flex-col mt-5 gap-3 text-gray-500 text-xl leading-5 font-semibold">
+					<p>Sire: {data.offspring[0]['sire']}</p>
+					<p>Dam: {data.offspring[0]['dam']}</p>
+					<p>
+						Offspring: {data.offspring[0]['offspring']}
+					</p>
+				</div>
+			</div>
+			<div
+				class="flex flex-col mt-12 gap-3 text-gray-500 text-xl leading-5 font-semibold max-w-72 lg:max-w-96"
+			>
+				<p>Comment: {data.offspring[0]['comment']}</p>
+			</div>
+		</div>
+	{/if}
+</div>

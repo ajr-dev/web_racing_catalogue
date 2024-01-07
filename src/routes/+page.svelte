@@ -3,7 +3,7 @@
 
 	export let data: PageData;
 
-	console.log(data.pigeonsCount);
+	// console.log(data.pigeonsCount);
 
 	import '../app.css';
 	import Search from '$lib/components/Search.svelte';
@@ -11,7 +11,7 @@
 
 <main>
 	<!-- search -->
-	<Search></Search>
+	<!-- <Search></Search> -->
 
 	<!-- header -->
 	<svg
@@ -69,7 +69,7 @@
 		>
 			<!-- Your button content goes here -->
 			<a
-				href="/pigeons"
+				href="/pigeons/1"
 				class=" text-black border-[1px] border-black px-9 py-6 rounded text-xl font-semibold leading-3 bg-white bg-opacity-40 hover:bg-white hover:bg-opacity-60 transition-colors duration-300 ease-in-out"
 				>Search Pigeons</a
 			>

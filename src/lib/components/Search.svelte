@@ -1,11 +1,38 @@
 <script>
-	import { onMount } from 'svelte';
-	import { goto } from '$app/navigation';
+	import { onMount, onDestroy } from 'svelte';
+	import { writable } from 'svelte/store';
 
 	let inputValue = '';
+	const searchResults = writable('');
+
+	let timeout;
+
+	const bodyClickHandler = (event) => {
+		const searchInput = document.getElementById('search');
+		const resultsPopup = document.getElementById('resultsPopup');
+
+		if (resultsPopup && !resultsPopup.contains(event.target) && searchInput !== event.target) {
+			searchResults.set('');
+			inputValue = '';
+		}
+	};
 
 	onMount(() => {
-		document.getElementById('search').addEventListener('keydown', handleKeyDown);
+		if (typeof window !== 'undefined') {
+			// Code inside this block will only run on the client side
+			document.getElementById('search').addEventListener('keydown', handleKeyDown);
+			document.getElementById('search').addEventListener('input', handleInput);
+			document.body.addEventListener('click', bodyClickHandler);
+		}
+	});
+
+	onDestroy(() => {
+		if (typeof window !== 'undefined') {
+			// Code inside this block will only run on the client side
+			document.getElementById('search').removeEventListener('keydown', handleKeyDown);
+			document.getElementById('search').removeEventListener('input', handleInput);
+			document.body.removeEventListener('click', bodyClickHandler);
+		}
 	});
 
 	const handleKeyDown = (event) => {
@@ -14,10 +41,27 @@
 		}
 	};
 
-	const handleSubmit = () => {
-		// Navigate to the specified path using Svelte's router or any navigation method you prefer
-		const path = `/pigeons/${inputValue}`;
-		goto(path, { replaceState: false });
+	const handleInput = () => {
+		inputValue = document.getElementById('search').value.trim();
+		clearTimeout(timeout);
+		timeout = setTimeout(() => {
+			handleSubmit();
+		}, 1000);
+	};
+
+	const handleSubmit = async () => {
+		// Make a request to the API route to get the 5 most similar results
+		try {
+			const response = await fetch(`/api/similarPigeons/${inputValue}`);
+			const data = await response.json();
+			console.log(data);
+
+			// Update searchResults with the fetched data
+			// searchResults = data.data;
+			searchResults.set(data.data);
+		} catch (error) {
+			console.error('Error fetching similar pigeons:', error);
+		}
 	};
 </script>
 
@@ -48,12 +92,31 @@
 			placeholder="Search for a pigeon"
 			required
 		/>
-		<!-- not sure about this yet -->
-		<!-- <button
-			type="submit"
-			class="text-white absolute end-2.5 bottom-1 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-		>
-			Search
-		</button> -->
+	</div>
+
+	<div class="relative">
+		{#if $searchResults.length > 0}
+			<div
+				id="resultsPopup"
+				class="w-full max-w-[1776px] bg-[#222222] rounded-lg text-white absolute flex flex-col mt-1 group p-3 pr-5 z-10"
+			>
+				{#each $searchResults as result}
+					<a
+						href="/pigeons/id/{result['ring'].replaceAll(' ', '_')}"
+						on:click={() => ((inputValue = ''), ($searchResults = ''))}
+						class="w-full rounded-lg p-3 m-1 bg-[#333333] hover:bg-[#444444] transition-colors duration-300 ease-in-out group-focus:opacity-100"
+					>
+						{result['ring']}
+					</a>
+				{/each}
+			</div>
+		{:else if inputValue !== ''}
+			<div
+				id="resultsPopup"
+				class="w-full max-w-[1777px] bg-[#222222] rounded-lg text-white absolute flex flex-col mt-2 p-3"
+			>
+				<p>No results</p>
+			</div>
+		{/if}
 	</div>
 </form>

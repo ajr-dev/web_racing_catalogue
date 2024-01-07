@@ -7,6 +7,6 @@
 
 <main>
 	<!-- search -->
-	<Search></Search>
+	<!-- <Search></Search> -->
 	<slot />
 </main>
