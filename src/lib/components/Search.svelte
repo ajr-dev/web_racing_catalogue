@@ -46,7 +46,7 @@
 		clearTimeout(timeout);
 		timeout = setTimeout(() => {
 			handleSubmit();
-		}, 1000);
+		}, 500);
 	};
 
 	const handleSubmit = async () => {

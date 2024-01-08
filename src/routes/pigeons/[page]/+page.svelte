@@ -22,7 +22,7 @@
 
 <main>
 	<div class="flex w-full justify-between mb-10 mt-0 lg:mt-10">
-		<h1 class="text-5xl leading-5 text-neutral-800 font-bold">Showing Results</h1>
+		<h1 class="text-4xl leading-5 text-neutral-800 font-bold">Catalogue</h1>
 	</div>
 
 	<div class="relative overflow-x-auto shadow-md sm:rounded-lg group">
@@ -51,7 +51,27 @@
 						</th>
 						<td class="px-6 py-4"> {pigeon['strain']} </td>
 						<td class="px-6 py-4 min-w-28"> {pigeon['color']} </td>
-						<td class="px-6 py-4"> {pigeon['sex'] == 0 ? 'Hen' : 'Cock'} </td>
+						<td class="px-6 py-4 relative">
+							<svg
+								class="{pigeon['sex'] == 0
+									? 'hen-stroke'
+									: 'cock-stroke'} w-9 pr-1 opacity-60 rounded-md"
+								height="20"
+								xmlns="http://www.w3.org/2000/svg"
+								style="position: absolute; top: 50%; transform: translateY(-50%); z-index: 0;"
+							>
+								<path
+									d="M5 10 Q25 5, 50 10 Q75 15, 95 10"
+									fill="none"
+									stroke={pigeon['sex'] == 0 ? '#ff99cc' : '#99ccff'}
+									stroke-width="20"
+									stroke-linecap="round"
+								/>
+							</svg>
+							<span style="position: relative; z-index: 1;">
+								{pigeon['sex'] == 0 ? 'Hen' : 'Cock'}
+							</span>
+						</td>
 						<td class="px-6 py-4"> {pigeon['alias']} </td>
 						<td class="px-6 py-4"> {formatDate(pigeon.dob)} </td>
 					</tr>
