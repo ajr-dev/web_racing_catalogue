@@ -50,7 +50,7 @@
 							{pigeon['ring']}
 						</th>
 						<td class="px-6 py-4"> {pigeon['strain']} </td>
-						<td class="px-6 py-4"> {pigeon['color']} </td>
+						<td class="px-6 py-4 min-w-28"> {pigeon['color']} </td>
 						<td class="px-6 py-4"> {pigeon['sex'] == 0 ? 'Hen' : 'Cock'} </td>
 						<td class="px-6 py-4"> {pigeon['alias']} </td>
 						<td class="px-6 py-4"> {formatDate(pigeon.dob)} </td>

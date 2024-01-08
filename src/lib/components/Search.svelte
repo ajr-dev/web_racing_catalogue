@@ -88,7 +88,7 @@
 			type="search"
 			id="search"
 			bind:value={inputValue}
-			class="block w-full px-3 py-4 lg:py-3 ps-11 text-sm text-[#BEBEBE] rounded-lg bg-[#D2D2D2] focus:bg-[#222222] transition-colors duration-300 ease-in-out group-focus:opacity-100"
+			class="block w-full px-3 py-4 ps-11 text-sm text-[#BEBEBE] rounded-lg bg-[#D2D2D2] focus:bg-[#222222] transition-colors duration-300 ease-in-out group-focus:opacity-100"
 			placeholder="Search for a pigeon"
 			required
 		/>
