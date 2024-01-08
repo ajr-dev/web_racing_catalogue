@@ -15,9 +15,11 @@
 			return '';
 		}
 	};
+
+	// console.log(data.offspring[0]);
 </script>
 
-<div class="mt-4 lg:mt-14 flex flex-col lg:flex-row">
+<div class="mt-4 flex flex-col lg:flex-row">
 	<div class="mt-7 gap-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
 		<svg
 			xmlns="http://www.w3.org/2000/svg"
@@ -76,7 +78,7 @@
 	<p>Comment: {data.pigeon[0]['comment']}</p>
 </div>
 
-<div class="grid grid-cols-1 md:grid-cols-2">
+<div class="grid grid-cols-1 md:grid-cols-2 mb-10">
 	{#if data.sire[0]}
 		<div>
 			<div
@@ -176,51 +178,55 @@
 	{/if}
 
 	{#if data.offspring[0]}
-		<div>
-			<div
-				class="flex flex-col mt-20 gap-3 text-neutral-800 text-4xl leading-5 font-semibold max-w-[800px]"
-			>
-				<p>Offspring</p>
-			</div>
-
-			<div
-				class="mt-7 gap-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-1 xl:grid-cols-2 3xl:grid-cols-3"
-			>
-				<div class="flex flex-col mt-5 gap-3 text-gray-500 text-xl leading-5 font-semibold">
-					<p>
-						Pigeon Ring: <span class="py-[2px] px-2 bg-black rounded-lg text text-neutral-100"
-							><a href="/pigeons/id/{data.sire[0]['ring'].replaceAll(' ', '_')}"
-								>{data.offspring[0]['ring']}</a
-							></span
-						>
-					</p>
-					<p>Strain: {data.offspring[0]['strain']}</p>
-					<p>Colour: {data.offspring[0]['color']}</p>
-				</div>
-
-				<div class="flex flex-col mt-5 gap-3 text-gray-500 text-xl leading-5 font-semibold">
-					<p>Alias: {data.offspring[0]['alias']}</p>
-					<p>
-						Sex: {data.offspring[0]['sex'] == 0 ? 'Hen' : 'Cock'}
-					</p>
-					<p>
-						Date of Birth: {formatDate(data.offspring[0]['dob'])}
+		{#each data.offspring as offspring}
+			<div>
+				<div
+					class="flex flex-col mt-20 gap-3 text-neutral-800 text-4xl leading-5 font-semibold max-w-[800px]"
+				>
+					<p class={offspring['ring'] == data.offspring[0]['ring'] ? 'visible' : 'opacity-0'}>
+						Offspring
 					</p>
 				</div>
 
-				<div class="flex flex-col mt-5 gap-3 text-gray-500 text-xl leading-5 font-semibold">
-					<p>Sire: {data.offspring[0]['sire']}</p>
-					<p>Dam: {data.offspring[0]['dam']}</p>
-					<p>
-						Offspring: {data.offspring[0]['offspring']}
-					</p>
+				<div
+					class="mt-7 gap-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-1 xl:grid-cols-2 3xl:grid-cols-3"
+				>
+					<div class="flex flex-col mt-5 gap-3 text-gray-500 text-xl leading-5 font-semibold">
+						<p>
+							Pigeon Ring: <span class="py-[2px] px-2 bg-black rounded-lg text text-neutral-100"
+								><a href="/pigeons/id/{offspring['ring'].replaceAll(' ', '_')}"
+									>{offspring['ring']}</a
+								></span
+							>
+						</p>
+						<p>Strain: {offspring['strain']}</p>
+						<p>Colour: {offspring['color']}</p>
+					</div>
+
+					<div class="flex flex-col mt-5 gap-3 text-gray-500 text-xl leading-5 font-semibold">
+						<p>Alias: {offspring['alias']}</p>
+						<p>
+							Sex: {offspring['sex'] == 0 ? 'Hen' : 'Cock'}
+						</p>
+						<p>
+							Date of Birth: {formatDate(offspring['dob'])}
+						</p>
+					</div>
+
+					<div class="flex flex-col mt-5 gap-3 text-gray-500 text-xl leading-5 font-semibold">
+						<p>Sire: {offspring['sire']}</p>
+						<p>Dam: {offspring['dam']}</p>
+						<p>
+							Offspring: {offspring['offspring'][0]}
+						</p>
+					</div>
+				</div>
+				<div
+					class="flex flex-col mt-12 gap-3 text-gray-500 text-xl leading-5 font-semibold max-w-72 lg:max-w-96"
+				>
+					<p>Comment: {offspring['comment']}</p>
 				</div>
 			</div>
-			<div
-				class="flex flex-col mt-12 gap-3 text-gray-500 text-xl leading-5 font-semibold max-w-72 lg:max-w-96"
-			>
-				<p>Comment: {data.offspring[0]['comment']}</p>
-			</div>
-		</div>
+		{/each}
 	{/if}
 </div>

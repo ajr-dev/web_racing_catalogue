@@ -21,7 +21,7 @@
 </script>
 
 <main>
-	<div class="flex w-full justify-between my-20">
+	<div class="flex w-full justify-between mb-10 mt-0 lg:mt-10">
 		<h1 class="text-5xl leading-5 text-neutral-800 font-bold">Showing Results</h1>
 	</div>
 
@@ -61,7 +61,7 @@
 	</div>
 
 	<!-- pagination -->
-	<div class="mt-10">
+	<div class="mt-10 mb-10">
 		<Pagination.Root
 			count={data.body.totalPages * data.body.pigeonsPerPage}
 			page={data.body.page}

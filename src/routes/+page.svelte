@@ -62,7 +62,7 @@
 	<div class="mt-6 lg:mt-40 relative group">
 		<img class="object-cover rounded-lg w-full h-64 lg:h-auto" alt="pigeons" src="test.png" />
 		<div
-			class="absolute inset-0 bg-black opacity-0 group-hover:opacity-20 duration-300 ease-in-out transition-opacity rounded-lg"
+			class="absolute inset-0 bg-black opacity-5 group-hover:opacity-20 duration-300 ease-in-out transition-opacity rounded-lg"
 		></div>
 		<div
 			class="absolute inset-0 flex items-center justify-center opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100"
