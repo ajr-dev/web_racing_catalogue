@@ -65,7 +65,7 @@
 	};
 </script>
 
-<form class="my-5 group" on:submit|preventDefault={handleSubmit}>
+<form class="mt-5 group" on:submit|preventDefault={handleSubmit}>
 	<div class="relative">
 		<div class="absolute inset-y-0 start-0 flex items-center ps-5 pointer-events-none">
 			<svg

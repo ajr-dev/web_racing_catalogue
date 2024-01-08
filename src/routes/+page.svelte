@@ -10,25 +10,32 @@
 </script>
 
 <main>
-	<!-- search -->
-	<!-- <Search></Search> -->
-
 	<!-- header -->
 	<svg
 		height="172"
 		viewBox="0 0 1779 172"
 		fill="rgb(34, 34, 34)"
-		class="text-neutral-800 font-bold inline w-full h-auto bg-gray-200 mt-4 lg:mt-14"
+		class="text-neutral-800 font-bold inline w-full h-auto bg-gray-200"
 	>
 		<text
+			class="text-[136px] hidden lg:block"
 			x="50%"
 			y="50%"
 			dominant-baseline="middle"
 			text-anchor="middle"
-			font-size="136"
 			fill="rgb(34, 34, 34)"
 		>
 			BERTIE RABIE RACING LOFT
+		</text>
+		<text
+			class="text-[159px] block lg:hidden"
+			x="50%"
+			y="50%"
+			dominant-baseline="middle"
+			text-anchor="middle"
+			fill="rgb(34, 34, 34)"
+		>
+			BERTIE R. RACING LOFT
 		</text>
 	</svg>
 
