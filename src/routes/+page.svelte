@@ -82,7 +82,9 @@
 		</div>
 	</div>
 
-	<div class="flex flex-row text-lg w-full justify-center align-middle items-center mt-12">
+	<div
+		class="flex flex-col gap-2 md:gap-0 md:flex-row text-lg w-full justify-center align-middle items-center mt-12"
+	>
 		<span>Look through over <strong> {data.pigeonsCount} </strong> pigeons on record</span>
 		<a href="/pigeons/1/" class="flex flex-row justify-center align-middle items-center ml-5">
 			<svg
