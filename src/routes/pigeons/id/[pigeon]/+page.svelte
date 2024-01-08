@@ -43,7 +43,9 @@
 				>
 			</svg> -->
 
-			<div class="flex flex-col gap-3 text-gray-500 text-xl leading-5 font-semibold">
+			<div
+				class="flex flex-col gap-1 md:gap-3 text-gray-500 text-sm md:text-xl leading-5 font-semibold"
+			>
 				<p>
 					Pigeon Ring: <span class="py-[2px] px-2 bg-black rounded-lg text text-neutral-100"
 						>{data.pigeon[0]['ring']}</span
@@ -53,14 +55,16 @@
 				<p>Colour: {data.pigeon[0]['color']}</p>
 			</div>
 
-			<div class="flex flex-col gap-3 text-gray-500 text-xl leading-5 font-semibold">
+			<div
+				class="flex flex-col gap-1 md:gap-3 text-gray-500 text-sm md:text-xl leading-5 font-semibold"
+			>
 				<p>Alias: {data.pigeon[0]['alias']}</p>
 				<p>
 					Sex: <span class="absolute ml-1">
 						<svg
 							class="{data.pigeon[0]['sex'] == 0
 								? 'hen-stroke'
-								: 'cock-stroke'} w-11 opacity-60 rounded-md"
+								: 'cock-stroke'} w-9 opacity-60 rounded-md"
 							height="20"
 							xmlns="http://www.w3.org/2000/svg"
 							style="position: absolute; top: 50%; transform: translateY(-50%); z-index: 0;"
@@ -83,7 +87,7 @@
 				</p>
 			</div>
 
-			<!-- <div class="flex flex-col mt-5 gap-3 text-gray-500 text-xl leading-5 font-semibold">
+			<!-- <div class="flex flex-col mt-5 gap-3 text-gray-500 text-sm md:text-xl leading-5 font-semibold">
 				<p>Sire: {data.pigeon[0]['sire']}</p>
 				<p>Dam: {data.pigeon[0]['dam']}</p>
 				<p>
@@ -94,7 +98,7 @@
 	</div>
 
 	<div
-		class="flex flex-col mt-12 gap-3 text-gray-500 text-xl leading-5 font-semibold max-w-[800px]"
+		class="flex flex-col mt-8 md:mt-12 gap-3 text-gray-500 text-sm md:text-xl leading-5 font-semibold max-w-[800px]"
 	>
 		<p>Comment: {data.pigeon[0]['comment']}</p>
 	</div>
@@ -113,7 +117,9 @@
 				<div
 					class="mt-7 gap-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-1 xl:grid-cols-2 3xl:grid-cols-3"
 				>
-					<div class="flex flex-col mt-5 gap-3 text-gray-500 text-xl leading-5 font-semibold">
+					<div
+						class="flex flex-col mt-5 gap-3 text-gray-500 text-sm md:text-xl leading-5 font-semibold"
+					>
 						<p>
 							Pigeon Ring: <span class="py-[2px] px-2 bg-black rounded-lg text text-neutral-100"
 								><a href="/pigeons/id/{data.sire[0]['ring'].replaceAll(' ', '_')}"
@@ -125,14 +131,16 @@
 						<p>Colour: {data.sire[0]['color']}</p>
 					</div>
 
-					<div class="flex flex-col mt-5 gap-3 text-gray-500 text-xl leading-5 font-semibold">
+					<div
+						class="flex flex-col mt-5 gap-3 text-gray-500 text-sm md:text-xl leading-5 font-semibold"
+					>
 						<p>Alias: {data.sire[0]['alias']}</p>
 						<p>
 							Sex: <span class="absolute ml-1">
 								<svg
 									class="{data.sire[0]['sex'] == 0
 										? 'hen-stroke'
-										: 'cock-stroke'} w-11 opacity-60 rounded-md"
+										: 'cock-stroke'} w-9 opacity-60 rounded-md"
 									height="20"
 									xmlns="http://www.w3.org/2000/svg"
 									style="position: absolute; top: 50%; transform: translateY(-50%); z-index: 0;"
@@ -155,7 +163,9 @@
 						</p>
 					</div>
 
-					<div class="flex flex-col mt-5 gap-3 text-gray-500 text-xl leading-5 font-semibold">
+					<div
+						class="flex flex-col mt-5 gap-3 text-gray-500 text-sm md:text-xl leading-5 font-semibold"
+					>
 						<p>
 							Sire: <span class="py-[2px] px-2 bg-black rounded-lg text text-neutral-100"
 								><a href="/pigeons/id/{data.sire[0]['sire'].replaceAll(' ', '_')}"
@@ -173,7 +183,7 @@
 					</div>
 				</div>
 				<div
-					class="flex flex-col mt-12 gap-3 text-gray-500 text-xl leading-5 font-semibold max-w-72 lg:max-w-96"
+					class="flex flex-col mt-12 gap-3 text-gray-500 text-sm md:text-xl leading-5 font-semibold max-w-72 lg:max-w-96"
 				>
 					<p>Comment: {data.sire[0]['comment']}</p>
 				</div>
@@ -193,7 +203,9 @@
 				<div
 					class="mt-7 gap-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-1 xl:grid-cols-2 3xl:grid-cols-3"
 				>
-					<div class="flex flex-col mt-5 gap-3 text-gray-500 text-xl leading-5 font-semibold">
+					<div
+						class="flex flex-col mt-5 gap-3 text-gray-500 text-sm md:text-xl leading-5 font-semibold"
+					>
 						<p>
 							Pigeon Ring: <span class="py-[2px] px-2 bg-black rounded-lg text text-neutral-100"
 								><a href="/pigeons/id/{data.sire[0]['ring'].replaceAll(' ', '_')}"
@@ -205,14 +217,16 @@
 						<p>Colour: {data.dam[0]['color']}</p>
 					</div>
 
-					<div class="flex flex-col mt-5 gap-3 text-gray-500 text-xl leading-5 font-semibold">
+					<div
+						class="flex flex-col mt-5 gap-3 text-gray-500 text-sm md:text-xl leading-5 font-semibold"
+					>
 						<p>Alias: {data.dam[0]['alias']}</p>
 						<p>
 							Sex: <span class="absolute ml-1">
 								<svg
 									class="{data.dam[0]['sex'] == 0
 										? 'hen-stroke'
-										: 'cock-stroke'} w-11 opacity-60 rounded-md"
+										: 'cock-stroke'} w-9 opacity-60 rounded-md"
 									height="20"
 									xmlns="http://www.w3.org/2000/svg"
 									style="position: absolute; top: 50%; transform: translateY(-50%); z-index: 0;"
@@ -235,7 +249,9 @@
 						</p>
 					</div>
 
-					<div class="flex flex-col mt-5 gap-3 text-gray-500 text-xl leading-5 font-semibold">
+					<div
+						class="flex flex-col mt-5 gap-3 text-gray-500 text-sm md:text-xl leading-5 font-semibold"
+					>
 						<p>
 							Sire: <span class="py-[2px] px-2 bg-black rounded-lg text text-neutral-100"
 								><a href="/pigeons/id/{data.dam[0]['sire'].replaceAll(' ', '_')}"
@@ -253,7 +269,7 @@
 					</div>
 				</div>
 				<div
-					class="flex flex-col mt-12 gap-3 text-gray-500 text-xl leading-5 font-semibold max-w-72 lg:max-w-96"
+					class="flex flex-col mt-12 gap-3 text-gray-500 text-sm md:text-xl leading-5 font-semibold max-w-72 lg:max-w-96"
 				>
 					<p>Comment: {data.dam[0]['comment']}</p>
 				</div>
@@ -275,7 +291,9 @@
 				<div
 					class="mt-7 gap-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-1 xl:grid-cols-2 3xl:grid-cols-3"
 				>
-					<div class="flex flex-col mt-5 gap-3 text-gray-500 text-xl leading-5 font-semibold">
+					<div
+						class="flex flex-col mt-5 gap-3 text-gray-500 text-sm md:text-xl leading-5 font-semibold"
+					>
 						<p>
 							Pigeon Ring: <span class="py-[2px] px-2 bg-black rounded-lg text text-neutral-100"
 								><a href="/pigeons/id/{offspring['ring'].replaceAll(' ', '_')}"
@@ -287,14 +305,16 @@
 						<p>Colour: {offspring['color']}</p>
 					</div>
 
-					<div class="flex flex-col mt-5 gap-3 text-gray-500 text-xl leading-5 font-semibold">
+					<div
+						class="flex flex-col mt-5 gap-3 text-gray-500 text-sm md:text-xl leading-5 font-semibold"
+					>
 						<p>Alias: {offspring['alias']}</p>
 						<p>
 							Sex: <span class="absolute ml-1">
 								<svg
 									class="{offspring['sex'] == 0
 										? 'hen-stroke'
-										: 'cock-stroke'} w-11 opacity-60 rounded-md"
+										: 'cock-stroke'} w-9 opacity-60 rounded-md"
 									height="20"
 									xmlns="http://www.w3.org/2000/svg"
 									style="position: absolute; top: 50%; transform: translateY(-50%); z-index: 0;"
@@ -317,7 +337,9 @@
 						</p>
 					</div>
 
-					<div class="flex flex-col mt-5 gap-3 text-gray-500 text-xl leading-5 font-semibold">
+					<div
+						class="flex flex-col mt-5 gap-3 text-gray-500 text-sm md:text-xl leading-5 font-semibold"
+					>
 						<p>
 							Sire: <span class="py-[2px] px-2 bg-black rounded-lg text text-neutral-100"
 								><a href="/pigeons/id/{offspring['sire'].replaceAll(' ', '_')}"
@@ -334,7 +356,8 @@
 						<p class="flex flex-row gap-1">
 							Offspring: <span class="flex flex-col lg:flex-row xl:flex-col 2xl:flex-row gap-1">
 								{#each offspring['offspring'] as spring}
-									<span class="py-[5.5px] px-2 bg-black rounded-lg text text-neutral-100"
+									<span
+										class="py-[2px] md:py-[5.5px] px-2 bg-black rounded-lg text text-neutral-100"
 										><a href="/pigeons/id/{spring.replaceAll(' ', '_')}">{spring}</a></span
 									>
 								{/each}
@@ -343,7 +366,7 @@
 					</div>
 				</div>
 				<div
-					class="flex flex-col mt-12 gap-3 text-gray-500 text-xl leading-5 font-semibold max-w-72 lg:max-w-96"
+					class="flex flex-col mt-12 gap-3 text-gray-500 text-sm md:text-xl leading-5 font-semibold max-w-72 lg:max-w-96"
 				>
 					<p>Comment: {offspring['comment']}</p>
 				</div>
