@@ -356,8 +356,7 @@
 						<p class="flex flex-row gap-1">
 							Offspring: <span class="flex flex-col lg:flex-row xl:flex-col 2xl:flex-row gap-1">
 								{#each offspring['offspring'] as spring}
-									<span
-										class="py-[2px] md:py-[5.5px] px-2 bg-black rounded-lg text text-neutral-100"
+									<span class="py-[1px] px-2 bg-black rounded-lg text text-neutral-100"
 										><a href="/pigeons/id/{spring.replaceAll(' ', '_')}">{spring}</a></span
 									>
 								{/each}
