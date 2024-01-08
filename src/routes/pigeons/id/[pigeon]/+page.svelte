@@ -44,7 +44,7 @@
 			</svg> -->
 
 			<div
-				class="flex flex-col gap-1 md:gap-3 text-gray-500 text-sm md:text-xl leading-5 font-semibold"
+				class="flex flex-col gap-1 md:gap-2 text-gray-500 text-sm md:text-lg leading-5 font-semibold"
 			>
 				<p>
 					Pigeon Ring: <span class="py-[2px] px-2 bg-black rounded-lg text text-neutral-100"
@@ -56,7 +56,7 @@
 			</div>
 
 			<div
-				class="flex flex-col gap-1 md:gap-3 text-gray-500 text-sm md:text-xl leading-5 font-semibold"
+				class="flex flex-col gap-1 md:gap-2 text-gray-500 text-sm md:text-lg leading-5 font-semibold"
 			>
 				<p>Alias: {data.pigeon[0]['alias']}</p>
 				<p>
@@ -87,7 +87,7 @@
 				</p>
 			</div>
 
-			<!-- <div class="flex flex-col mt-5 gap-3 text-gray-500 text-sm md:text-xl leading-5 font-semibold">
+			<!-- <div class="flex flex-col mt-5 gap-3 text-gray-500 text-sm md:text-lg leading-5 font-semibold">
 				<p>Sire: {data.pigeon[0]['sire']}</p>
 				<p>Dam: {data.pigeon[0]['dam']}</p>
 				<p>
@@ -98,7 +98,7 @@
 	</div>
 
 	<div
-		class="flex flex-col mt-8 md:mt-12 gap-3 text-gray-500 text-sm md:text-xl leading-5 font-semibold max-w-[800px]"
+		class="flex flex-col mt-8 md:mt-12 gap-3 text-gray-500 text-sm md:text-lg leading-5 font-semibold max-w-[800px]"
 	>
 		<p>Comment: {data.pigeon[0]['comment']}</p>
 	</div>
@@ -118,7 +118,7 @@
 					class="mt-7 gap-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-1 xl:grid-cols-2 3xl:grid-cols-3"
 				>
 					<div
-						class="flex flex-col mt-5 gap-3 text-gray-500 text-sm md:text-xl leading-5 font-semibold"
+						class="flex flex-col mt-5 gap-1 md:gap-2 text-gray-500 text-sm md:text-lg leading-5 font-semibold"
 					>
 						<p>
 							Pigeon Ring: <span class="py-[2px] px-2 bg-black rounded-lg text text-neutral-100"
@@ -132,7 +132,7 @@
 					</div>
 
 					<div
-						class="flex flex-col mt-5 gap-3 text-gray-500 text-sm md:text-xl leading-5 font-semibold"
+						class="flex flex-col mt-5 gap-1 md:gap-2 text-gray-500 text-sm md:text-lg leading-5 font-semibold"
 					>
 						<p>Alias: {data.sire[0]['alias']}</p>
 						<p>
@@ -164,7 +164,7 @@
 					</div>
 
 					<div
-						class="flex flex-col mt-5 gap-3 text-gray-500 text-sm md:text-xl leading-5 font-semibold"
+						class="flex flex-col mt-5 gap-1 md:gap-2 text-gray-500 text-sm md:text-lg leading-5 font-semibold"
 					>
 						<p>
 							Sire: <span class="py-[2px] px-2 bg-black rounded-lg text text-neutral-100"
@@ -183,7 +183,7 @@
 					</div>
 				</div>
 				<div
-					class="flex flex-col mt-12 gap-3 text-gray-500 text-sm md:text-xl leading-5 font-semibold max-w-72 lg:max-w-96"
+					class="flex flex-col mt-12 gap-3 text-gray-500 text-sm md:text-lg leading-5 font-semibold max-w-72 lg:max-w-96"
 				>
 					<p>Comment: {data.sire[0]['comment']}</p>
 				</div>
@@ -204,7 +204,7 @@
 					class="mt-7 gap-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-1 xl:grid-cols-2 3xl:grid-cols-3"
 				>
 					<div
-						class="flex flex-col mt-5 gap-3 text-gray-500 text-sm md:text-xl leading-5 font-semibold"
+						class="flex flex-col mt-5 gap-1 md:gap-2 text-gray-500 text-sm md:text-lg leading-5 font-semibold"
 					>
 						<p>
 							Pigeon Ring: <span class="py-[2px] px-2 bg-black rounded-lg text text-neutral-100"
@@ -218,7 +218,7 @@
 					</div>
 
 					<div
-						class="flex flex-col mt-5 gap-3 text-gray-500 text-sm md:text-xl leading-5 font-semibold"
+						class="flex flex-col mt-5 gap-1 md:gap-2 text-gray-500 text-sm md:text-lg leading-5 font-semibold"
 					>
 						<p>Alias: {data.dam[0]['alias']}</p>
 						<p>
@@ -250,7 +250,7 @@
 					</div>
 
 					<div
-						class="flex flex-col mt-5 gap-3 text-gray-500 text-sm md:text-xl leading-5 font-semibold"
+						class="flex flex-col mt-5 gap-1 md:gap-2 text-gray-500 text-sm md:text-lg leading-5 font-semibold"
 					>
 						<p>
 							Sire: <span class="py-[2px] px-2 bg-black rounded-lg text text-neutral-100"
@@ -269,7 +269,7 @@
 					</div>
 				</div>
 				<div
-					class="flex flex-col mt-12 gap-3 text-gray-500 text-sm md:text-xl leading-5 font-semibold max-w-72 lg:max-w-96"
+					class="flex flex-col mt-12 gap-3 text-gray-500 text-sm md:text-lg leading-5 font-semibold max-w-72 lg:max-w-96"
 				>
 					<p>Comment: {data.dam[0]['comment']}</p>
 				</div>
@@ -292,7 +292,7 @@
 					class="mt-7 gap-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-1 xl:grid-cols-2 3xl:grid-cols-3"
 				>
 					<div
-						class="flex flex-col mt-5 gap-3 text-gray-500 text-sm md:text-xl leading-5 font-semibold"
+						class="flex flex-col mt-5 gap-1 md:gap-2 text-gray-500 text-sm md:text-lg leading-5 font-semibold"
 					>
 						<p>
 							Pigeon Ring: <span class="py-[2px] px-2 bg-black rounded-lg text text-neutral-100"
@@ -306,7 +306,7 @@
 					</div>
 
 					<div
-						class="flex flex-col mt-5 gap-3 text-gray-500 text-sm md:text-xl leading-5 font-semibold"
+						class="flex flex-col mt-5 gap-1 md:gap-2 text-gray-500 text-sm md:text-lg leading-5 font-semibold"
 					>
 						<p>Alias: {offspring['alias']}</p>
 						<p>
@@ -338,7 +338,7 @@
 					</div>
 
 					<div
-						class="flex flex-col mt-5 gap-3 text-gray-500 text-sm md:text-xl leading-5 font-semibold"
+						class="flex flex-col mt-5 gap-1 md:gap-2 text-gray-500 text-sm md:text-lg leading-5 font-semibold"
 					>
 						<p>
 							Sire: <span class="py-[2px] px-2 bg-black rounded-lg text text-neutral-100"
@@ -366,7 +366,7 @@
 					</div>
 				</div>
 				<div
-					class="flex flex-col mt-12 gap-3 text-gray-500 text-sm md:text-xl leading-5 font-semibold max-w-72 lg:max-w-96"
+					class="flex flex-col mt-12 gap-3 text-gray-500 text-sm md:text-lg leading-5 font-semibold max-w-72 lg:max-w-96"
 				>
 					<p>Comment: {offspring['comment']}</p>
 				</div>
