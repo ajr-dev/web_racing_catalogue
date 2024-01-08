@@ -10,11 +10,11 @@
 <main class="min-w-screen min-h-screen flex text-black bg-[#E9E9E9]">
 	<div class="w-full flex flex-col px-3 max-w-[1800px] mx-auto relative">
 		<div class="flex flex-row w-full items-center">
-			<div class="mb-5 mr-5">
+			<a class="mb-5 mr-5" href="/">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
-					width="48"
-					height="48"
+					width="42"
+					height="42"
 					viewBox="0 0 48 48"
 					{...$$props}
 					><g fill="none"
@@ -33,7 +33,7 @@
 						/><circle cx="12" cy="31.412" r="2" fill="#222222" /></g
 					></svg
 				>
-			</div>
+			</a>
 			<div class="w-full">
 				<Search />
 			</div>
