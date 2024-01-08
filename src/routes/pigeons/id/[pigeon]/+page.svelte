@@ -105,8 +105,8 @@
 </div>
 
 <div class="grid grid-cols-1 md:grid-cols-2 mb-10 gap-[16px]">
-	<div class="bg-[#E5E5E5] rounded-lg p-6 mt-4">
-		{#if data.sire[0]}
+	{#if data.sire[0]}
+		<div class="bg-[#E5E5E5] rounded-lg p-6 mt-4">
 			<div>
 				<div
 					class="flex flex-col gap-3 text-neutral-800 text-4xl leading-5 font-semibold max-w-[800px]"
@@ -188,11 +188,11 @@
 					<p>Comment: {data.sire[0]['comment']}</p>
 				</div>
 			</div>
-		{/if}
-	</div>
+		</div>
+	{/if}
 
-	<div class="bg-[#E5E5E5] rounded-lg p-6 mt-4">
-		{#if data.dam[0]}
+	{#if data.dam[0]}
+		<div class="bg-[#E5E5E5] rounded-lg p-6 mt-4">
 			<div>
 				<div
 					class="flex flex-col gap-3 text-neutral-800 text-4xl leading-5 font-semibold max-w-[800px]"
@@ -274,8 +274,8 @@
 					<p>Comment: {data.dam[0]['comment']}</p>
 				</div>
 			</div>
-		{/if}
-	</div>
+		</div>
+	{/if}
 
 	{#if data.offspring[0]}
 		{#each data.offspring as offspring}

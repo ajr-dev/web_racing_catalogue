@@ -69,28 +69,46 @@
 	<div class="mt-6 lg:mt-40 relative group">
 		<img class="object-cover rounded-lg w-full h-64 lg:h-auto" alt="pigeons" src="test.png" />
 		<div
-			class="absolute inset-0 bg-black opacity-5 group-hover:opacity-20 duration-300 ease-in-out transition-opacity rounded-lg"
+			class="absolute inset-0 bg-black opacity-5 group-hover:opacity-20 duration-300 ease-in-out transition-opacity rounded-xl"
 		></div>
 		<div
 			class="absolute inset-0 flex items-center justify-center opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100"
 		>
-			<!-- Your button content goes here -->
 			<a
-				href="/pigeons/1"
-				class=" text-black border-[1px] border-black px-9 py-6 rounded text-xl font-semibold leading-3 bg-white bg-opacity-40 hover:bg-white hover:bg-opacity-60 transition-colors duration-300 ease-in-out"
-				>Search Pigeons</a
+				href="/pigeons/1/"
+				class=" text-black border-[1px] border-black px-8 py-8 rounded-lg text-xl font-semibold leading-3 bg-white bg-opacity-20 hover:bg-white hover:bg-opacity-60 transition-colors duration-300 ease-in-out"
+				>View Catalogue</a
 			>
 		</div>
 	</div>
 
+	<div class="flex flex-row text-lg w-full justify-center align-middle items-center mt-12">
+		<span>Look through over <strong> {data.pigeonsCount} </strong> pigeons on record</span>
+		<a href="/pigeons/1/" class="flex flex-row justify-center align-middle items-center ml-5">
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				width="24"
+				height="24"
+				viewBox="0 0 24 24"
+				{...$$props}
+				><path
+					fill="black"
+					d="M16.175 13H4v-2h12.175l-5.6-5.6L12 4l8 8l-8 8l-1.425-1.4l5.6-5.6Z"
+				/></svg
+			>
+
+			<strong id="linkanimation" class="ml-1">View Catalogue</strong>
+		</a>
+	</div>
+
 	<!-- stats -->
-	<table class="flex w-full mt-48">
+	<!-- <table class="flex w-full mt-48">
 		<tr class="flex w-full justify-center gap-6">
 			<td><span class="font-semibold text-6xl">{data.pigeonsCount}</span> pigeons </td>
-			<!-- <td><span class="font-semibold text-6xl">2</span> days ago updated </td> -->
-			<!-- <td><span class="font-semibold text-6xl">20</span> last month </td> -->
+			<td><span class="font-semibold text-6xl">2</span> days ago updated </td>
+			<td><span class="font-semibold text-6xl">20</span> last month </td>
 		</tr>
-	</table>
+	</table> -->
 </main>
 
 <style>
@@ -112,5 +130,30 @@
 		display: inline-block;
 		white-space: nowrap;
 		animation: marquee 10s linear infinite;
+	}
+
+	#linkanimation {
+		text-decoration: none;
+		color: black;
+		position: relative;
+	}
+	#linkanimation::before {
+		content: '';
+		background: linear-gradient(to right, rgb(0, 0, 0) 45%, rgba(255, 255, 255, 0.3) 55%);
+		background-size: 220% 100%;
+		background-position: 100% 50%;
+		width: 100%;
+		height: 2px;
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		background-repeat: no-repeat;
+		transition: 0.3s ease-out;
+	}
+	#linkanimation:hover::before {
+		background: linear-gradient(to right, rgb(0, 0, 0) 45%, rgba(255, 255, 255, 0.3) 55%);
+		background-size: 220% 100%;
+		background-position: 0% 50%;
+		transition: 0.3s ease-out;
 	}
 </style>
