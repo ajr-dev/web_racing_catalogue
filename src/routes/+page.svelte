@@ -141,7 +141,7 @@
 	}
 	#linkanimation::before {
 		content: '';
-		background: linear-gradient(to right, rgb(0, 0, 0) 45%, rgba(255, 255, 255, 0.3) 55%);
+		background: linear-gradient(to right, rgb(0, 0, 0) 45%, #b7b7b7 55%);
 		background-size: 220% 100%;
 		background-position: 100% 50%;
 		width: 100%;
@@ -153,7 +153,7 @@
 		transition: 0.3s ease-out;
 	}
 	#linkanimation:hover::before {
-		background: linear-gradient(to right, rgb(0, 0, 0) 45%, rgba(255, 255, 255, 0.3) 55%);
+		background: linear-gradient(to right, rgb(0, 0, 0) 45%, #b7b7b7 55%);
 		background-size: 220% 100%;
 		background-position: 0% 50%;
 		transition: 0.3s ease-out;

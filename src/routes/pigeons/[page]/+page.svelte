@@ -81,7 +81,7 @@
 	</div>
 
 	<!-- pagination -->
-	<div class="mt-10 mb-10 pr-9 w-full justify-center">
+	<div class="mt-10 mb-10 w-full justify-center">
 		<Pagination.Root
 			count={data.body.totalPages * data.body.pigeonsPerPage}
 			page={data.body.page}
