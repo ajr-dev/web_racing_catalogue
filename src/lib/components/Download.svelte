@@ -815,7 +815,7 @@
 		searchResults.set('Downloading.. 100%');
 
 		// Save the PDF
-		doc.save('pigeon_info.pdf');
+		doc.save(`BRRL__${pigeonData[0]['ring'].replaceAll(' ', '_')}.pdf`);
 
 		searchResults.set('Download PDF');
 	}
