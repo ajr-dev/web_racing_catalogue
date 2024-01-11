@@ -22,7 +22,25 @@ export const GET: RequestHandler = async (event) => {
 
     try {
         const result = await pigeons.find({ ring: event.params.ring }, { projection: { _id: 0 } }).toArray();
-        return new Response(JSON.stringify({ data: result }), { status: 200 })
+        if (result.length > 0) {
+            return new Response(JSON.stringify({ data: result }), { status: 200 })
+        } else {
+            return new Response(JSON.stringify({
+                data: [{
+                    ring: '',
+                    strain: '',
+                    color: '',
+                    alias: '',
+                    sex: '',
+                    dob: '',
+                    comment: '',
+                    dam: '',
+                    sire: '',
+                    offspring: {},
+                }]
+            }), { status: 200 })
+        }
+
     } catch (error) {
         return new Response(JSON.stringify({
             data: [{

@@ -1,6 +1,7 @@
 <script lang="ts">
 	import jsPDF from 'jspdf';
 	import { writable } from 'svelte/store';
+	import QRCode from 'qrcode-generator';
 
 	export let pigeonData;
 
@@ -88,6 +89,18 @@
 		doc.setFont('helvetica', 'bold');
 		doc.text(formatDate(pigeonData[0]['dob']), 40, 69);
 
+		// qr code
+		var qrcode = QRCode(0, 'L');
+		qrcode.addData(
+			`https://web-racing-catalogue.vercel.app/pigeons/id/${pigeonData[0]['ring'].replaceAll(
+				' ',
+				'_'
+			)}`
+		);
+		qrcode.make();
+		var qrCodeDataUrl = qrcode.createDataURL(4);
+		doc.addImage(qrCodeDataUrl, 'PNG', 153, 29.5, 40, 40);
+
 		//comment
 		doc.setFontSize(12);
 		doc.setFont('helvetica', 'normal');
@@ -127,9 +140,15 @@
 		doc.line(10, 132, 52, 132);
 		doc.rect(x, y, width, height);
 
-		doc.setFontSize(12);
-		doc.setFont('helvetica', 'bold');
-		doc.text(sire.data[0]['ring'], 12, 139);
+		if (sire.data[0]['ring'].length <= 16) {
+			doc.setFontSize(12);
+			doc.setFont('helvetica', 'bold');
+			doc.text(sire.data[0]['ring'], 12, 139);
+		} else {
+			doc.setFontSize(10);
+			doc.setFont('helvetica', 'bold');
+			doc.text(sire.data[0]['ring'], 12, 139);
+		}
 
 		doc.setLineWidth(0.5);
 		doc.line(10, 142, 52, 142);
@@ -138,7 +157,12 @@
 		doc.setFont('helvetica', 'normal');
 		doc.text(`Strain: ${sire.data[0]['strain']}`, 12, 147);
 		doc.text(`Colour: ${sire.data[0]['color']}`, 12, 152);
-		doc.text(`Alias: ${sire.data[0]['alias']}`, 12, 157);
+		if (sire.data[0]['alias'].length <= 16) {
+			doc.text(`Alias: ${sire.data[0]['alias']}`, 12, 157);
+		} else {
+			doc.setFontSize(6);
+			doc.text(`Alias: ${sire.data[0]['alias']}`, 12, 157);
+		}
 
 		// sire's dad
 		let sireDad;
@@ -461,9 +485,15 @@
 		doc.line(10, 225, 52, 225);
 		doc.rect(x, y, width, height);
 
-		doc.setFontSize(12);
-		doc.setFont('helvetica', 'bold');
-		doc.text(dam.data[0]['ring'], 12, 232);
+		if (dam.data[0]['ring'].length <= 16) {
+			doc.setFontSize(12);
+			doc.setFont('helvetica', 'bold');
+			doc.text(dam.data[0]['ring'], 12, 232);
+		} else {
+			doc.setFontSize(10);
+			doc.setFont('helvetica', 'bold');
+			doc.text(dam.data[0]['ring'], 12, 232);
+		}
 
 		doc.setLineWidth(0.5);
 		doc.line(10, 235, 52, 235);
