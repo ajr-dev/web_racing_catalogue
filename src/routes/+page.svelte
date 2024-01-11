@@ -67,7 +67,11 @@
 
 	<!-- maybe an image here of the player search records -->
 	<div class="mt-6 lg:mt-40 relative group">
-		<img class="object-cover rounded-lg w-full h-64 lg:h-auto" alt="pigeons" src="test.png" />
+		<img
+			class="object-cover rounded-lg w-full h-64 lg:h-[700px]"
+			alt="pigeons"
+			src="catalogue_new.png"
+		/>
 		<div
 			class="absolute inset-0 bg-black opacity-5 group-hover:opacity-20 duration-300 ease-in-out transition-opacity rounded-xl"
 		></div>

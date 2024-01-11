@@ -9,7 +9,7 @@ export const load = (async (event) => {
     } catch (error) {
         page = 1;
     }
-    const itemsPerPage = 15;
+    const itemsPerPage = 17;
 
     const totalDocuments = await pigeons.countDocuments();
     const totalPages = Math.ceil(totalDocuments / itemsPerPage);

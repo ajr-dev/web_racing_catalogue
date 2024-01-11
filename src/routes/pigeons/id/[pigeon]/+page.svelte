@@ -1,6 +1,7 @@
 <script lang="ts">
 	import type { PageData } from './$types';
 	import { page } from '$app/stores';
+	import Download from '$lib/components/Download.svelte';
 
 	export let data: PageData;
 
@@ -16,6 +17,8 @@
 		}
 	};
 </script>
+
+<Download pigeonData={data.pigeon}></Download>
 
 <div class="bg-[#E5E5E5] rounded-lg p-6 mt-4">
 	<div class="flex flex-col lg:flex-row">
