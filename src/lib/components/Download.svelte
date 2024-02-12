@@ -807,8 +807,8 @@
 		doc.setFontSize(10);
 		doc.setFont('helvetica', 'normal');
 		doc.text(
-			'Produced by Bertie Rabie Racing Loft Catalogue System - www.BertieRabieRacingLoft.com',
-			32 + 1,
+			'Produced by Bertie Rabie Racing Loft Catalogue System - www.web-racing-catalogue.vercel.app',
+			32 - 1,
 			290
 		);
 
