@@ -42,7 +42,7 @@ The BERTIE RABIE RACING LOFT platform was conceived to:
 
 The project was built using the following technology stack (or planned):
 
-- Frontend and Backend: SvelteKit (full-stack framework)
+- Frontend and Backend: SvelteKit (full-stack framework), Tailwind
 - Database: MongoDB for flexible, document-based data storage
 - Hosting/Deployment: Vercel for seamless deployment and hosting
 - Build System: Turborepo for optimized build processes and monorepo management
